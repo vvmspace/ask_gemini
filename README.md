@@ -19,28 +19,27 @@ Please consider supporting this project by donating:
 - **Customizable**: Supports custom API keys and model specifications, with defaults provided for immediate setup and use.
 - **Secure**: Implements best practices for safe API requests and ensures data integrity.
 
+## Google Gemini API key
+
+Get your Google Gemini API key from the [Google AI Studio](https://aistudio.google.com/app/apikey).
+
 ## Installation
 
-Add `ask_gemini` to your Cargo.toml:
-
-```toml
-[dependencies]
-ask_gemini = "0.1.0"
-```
-
-Or using `cargo`:
-
-```bash
-cargo add ask_gemini
-```
-
-## Usage
-
-Add `ask_gemini` and `tokio` to your project:
+Add `ask_gemini` to your Cargo.toml using cargo:
 
 ```bash
 cargo add ask_gemini tokio
 ```
+
+Or directly edit your Cargo.toml file:
+
+```toml
+[dependencies]
+ask_gemini = "0.1.2"
+tokio = "1.38.0"
+```
+
+## Usage
 
 Below is a simple example on how to use `ask_gemini` to send a prompt to the Gemini API and receive a response:
 
