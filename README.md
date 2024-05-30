@@ -36,6 +36,12 @@ cargo add ask_gemini
 
 ## Usage
 
+Add `ask_gemini` and `tokio` to your project:
+
+```bash
+cargo add ask_gemini tokio
+```
+
 Below is a simple example on how to use `ask_gemini` to send a prompt to the Gemini API and receive a response:
 
 ```rust
@@ -44,6 +50,50 @@ use ask_gemini::Gemini;
 #[tokio::main]
 async fn main() {
     let gemini = Gemini::new(Some("your_api_key_here"), None);
+    let prompt = "Hello, world!";
+
+    match gemini.ask(prompt).await {
+        Ok(response) => println!("Response: {:?}", response),
+        Err(e) => eprintln!("Error: {}", e),
+    }
+}
+```
+
+### Using Environment Variables
+
+You can also set the API key as an environment variable:
+
+```bash
+export GEMINI_API_KEY="your_api_key_here"
+```
+
+Then create a new instance of `Gemini` without specifying the API key:
+
+```rust
+use ask_gemini::Gemini;
+
+#[tokio::main]
+async fn main() {
+    let gemini = Gemini::new(None, None);
+    let prompt = "Hello, world!";
+
+    match gemini.ask(prompt).await {
+        Ok(response) => println!("Response: {:?}", response),
+        Err(e) => eprintln!("Error: {}", e),
+    }
+}
+```
+
+### Custom Model
+
+You can specify a custom model when creating a new instance of `Gemini`:
+
+```rust
+use ask_gemini::Gemini;
+
+#[tokio::main]
+async fn main() {
+    let gemini = Gemini::new(None, Some("model_name_here"));
     let prompt = "Hello, world!";
 
     match gemini.ask(prompt).await {
