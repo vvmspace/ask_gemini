@@ -1,6 +1,8 @@
 
 # Google Gemini API for Rust: ask_gemini
 
+[![Google Gemini API for Rust](https://img.youtube.com/vi/Gs-5PHfKonE/0.jpg)](https://www.youtube.com/watch?v=Gs-5PHfKonE)
+
 The `ask_gemini` crate is a powerful and easy-to-use Rust crate designed for making asynchronous API calls to the Google Gemini API. This library simplifies the process of sending prompts and fetching responses, handling all network and serialization tasks internally. It is ideal for developers looking to integrate Google Gemini API capabilities into their Rust applications efficiently.
 
 ## Donate
